@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificate Verification</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(160deg, #5a3a9a 0%, #3a5cc4 50%, #2a4ab8 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .card {
+      background: #f0f2f6;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 420px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    /* Header gradient */
+    .header {
+      background: linear-gradient(135deg, #6b3fa0 0%, #3a6fd8 60%, #2255c4 100%);
+      padding: 38px 24px 32px;
+      text-align: center;
+      color: white;
+    }
+
+    .header .checkmark {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .header h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .verified-badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(255,255,255,0.18);
+      border: 1.5px solid rgba(255,255,255,0.45);
+      border-radius: 20px;
+      padding: 7px 28px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    /* Body */
+    .body {
+      background: #f0f2f6;
+      padding: 28px 18px 32px;
+    }
+
+    /* Certificate ID box */
+    .cert-id-box {
+      background: linear-gradient(135deg, #6b3fa0 0%, #2e5fd8 100%);
+      border-radius: 14px;
+      padding: 18px 20px 16px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .cert-id-box .label {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .cert-id-box .id-value {
+      color: white;
+      font-size: 1.22rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    /* Section headings */
+    .section-title {
+      color: #2255c4;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      margin-top: 4px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      border-bottom: 2px solid #2255c4;
+      padding-bottom: 7px;
+    }
+
+    /* Info card */
+    .info-card {
+      background: white;
+      border-radius: 10px;
+      padding: 14px 16px 12px;
+      margin-bottom: 12px;
+    }
+
+    .info-card .field-label {
+      color: #888;
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .info-card .field-value {
+      color: #1a2340;
+      font-size: 1.05rem;
+      font-weight: 500;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .section-block {
+      margin-bottom: 22px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a2340;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      font-size: 0.78rem;
+      padding: 13px 18px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Header -->
+    <div class="header">
+      <div class="checkmark">✓</div>
+      <h1>Valid Certificate<br>Verified</h1>
+      <div class="verified-badge">VERIFIED</div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <!-- Certificate ID -->
+      <div class="cert-id-box">
+        <div class="label">Certificate ID</div>
+        <div class="id-value" id="certId">R9WCSH34Q9Z3HOOE</div>
+      </div>
+
+      <!-- Student Information -->
+      <div class="section-block">
+        <div class="section-title">Student Information</div>
+        <div class="info-card">
+          <div class="field-label">Student Name</div>
+          <div class="field-value">Sanjana M S</div>
+        </div>
+      </div>
+
+      <!-- Course Details -->
+      <div class="section-block">
+        <div class="section-title">Course Details</div>
+        <div class="info-card">
+          <div class="field-label">Course Name</div>
+          <div class="field-value">Frontend Web Development</div>
+        </div>
+        <div class="info-card">
+          <div class="field-label">Category</div>
+          <div class="field-value">Internship</div>
+        </div>
+        <div class="info-card">
+          <div class="field-label">Duration</div>
+          <div class="field-value">4 Weeks</div>
+        </div>
+        <div class="info-card">
+          <div class="field-label">Company Name</div>
+          <div class="field-value">CODTECH IT SOLUTIONS PRIVATE LIMITED</div>
+        </div>
+      </div>
+
+      <!-- Internship Period -->
+      <div class="section-block">
+        <div class="section-title">Internship Period</div>
+        <div class="info-card">
+          <div class="field-label">Start Date</div>
+          <div class="field-value">26 March 2026</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      This certificate has been verified and is authentic.
+    </div>
+  </div>
+
+
+</body>
+</html>
